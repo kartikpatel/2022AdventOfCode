@@ -1,4 +1,9 @@
 task :day1 do
   puts "DAY 1"
-  sh " ruby ./lib/day1/day1.rb < ./lib/day1/day1.txt", verbose: false
+  sh " ruby ./lib/day01.rb < ./lib/day01.txt", verbose: false
+end
+
+task :day2 do
+  puts "DAY 2"
+  sh " ruby ./lib/day02.rb < ./lib/day02.txt", verbose: false
 end
