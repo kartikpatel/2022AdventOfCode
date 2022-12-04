@@ -8,5 +8,8 @@
 
 ## Usage
 
-Install deps: `gem install bundler && bundle install`.  Run `bundle exec rake` to run the tests, or `bundle exec rake run` to run the program.
+Install dependencies: `bin/bundle`
 
+Run `bin/rspec --format doc` to run the tests
+
+Run `bin/rake day1` to run the program for day1

@@ -99,23 +99,23 @@ def calculate_choice(oc, r)
   end
 end
 
-@input = ARGF.readlines
+class Day2
+  def part1(input)
+    input.reduce(0) do |sum, round|
+      letters = round.split
+      oc = Choice.parse_opponent(letters[0])
+      pc = Choice.parse_player(letters[1])
+      sum + outcome(oc, pc)
+    end
+  end
 
-part1 = @input.reduce(0) do |sum, round|
-  letters = round.split
-  oc = Choice.parse_opponent(letters[0])
-  pc = Choice.parse_player(letters[1])
-  sum + outcome(oc, pc)
+  def part2(input)
+    input.reduce(0) do |sum, round|
+      letters = round.split
+      oc = Choice.parse_opponent(letters[0])
+      r = Result.parse(letters[1])
+      pc = calculate_choice(oc, r)
+      sum + outcome(oc, pc)
+    end
+  end
 end
-
-part2 = @input.reduce(0) do |sum, round|
-  letters = round.split
-  oc = Choice.parse_opponent(letters[0])
-  r = Result.parse(letters[1])
-  pc = calculate_choice(oc, r)
-  sum + outcome(oc, pc)
-end
-
-puts "Part 1: #{part1}"
-
-puts "Part 2: #{part2}"

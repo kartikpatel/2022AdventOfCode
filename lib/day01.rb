@@ -1,12 +1,19 @@
 #!/usr/bin/env ruby
 require "active_support/core_ext/array"
 
-@input = ARGF.readlines
+class Day1
+  def part1(input)
+    calculate_calories(input).max()
+  end
 
-@elves = @input.split { |line| line.blank? }
+  def part2(input)
+    calculate_calories(input).max(3).reduce(0) { |sum, value| sum + value }
+  end
 
-@elf_calories = @elves.map { |elf| elf.reduce(0) { |sum, value| sum + value.to_i } }
+  private
 
-puts "Part 1: #{@elf_calories.max()}"
-
-puts "Part 2: #{@elf_calories.max(3).reduce(0) { |sum, value| sum + value }}"
+  def calculate_calories(input)
+    elves = input.split { |line| line.blank? }
+    elves.map { |elf| elf.reduce(0) { |sum, value| sum + value.to_i } }
+  end
+end
