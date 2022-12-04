@@ -19,13 +19,13 @@ HEREDOC
 
 RSpec.describe Day1, '#run' do
   context 'for day 1' do
+    day = Day1.new
+
     it 'calculates part 1 correctly' do
-      day = Day1.new
       expect(day.part1(input.split("\n"))).to eq 24000
     end
 
     it 'calculates part 2 correctly' do
-      day = Day1.new
       expect(day.part2(input.split("\n"))).to eq 45000
     end
   end

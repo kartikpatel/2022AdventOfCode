@@ -3,9 +3,8 @@ lib = File.expand_path('../lib', __FILE__)
 #this will include the path in $LOAD_PATH unless it is already included
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
-require 'day01'
-require 'day02'
-require 'day03'
+#this will require all *.rb files in the lib folder based on the __dir__ of the calling __FILE__
+Dir[File.join(__dir__, 'lib', '*.rb')].each { |file| require file }
 
 task :day1 do
   puts "DAY 1"
@@ -29,6 +28,15 @@ task :day3 do
   puts "DAY 3"
   input = File.open("./txt/day03.txt").readlines
   day = Day3.new
+
+  puts "Part 1: #{day.part1(input)}"
+  puts "Part 2: #{day.part2(input)}"
+end
+
+task :day4 do
+  puts "DAY 4"
+  input = File.open("./txt/day04.txt").readlines
+  day = Day4.new
 
   puts "Part 1: #{day.part1(input)}"
   puts "Part 2: #{day.part2(input)}"
