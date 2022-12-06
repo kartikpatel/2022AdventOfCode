@@ -41,3 +41,12 @@ task :day4 do
   puts "Part 1: #{day.part1(input)}"
   puts "Part 2: #{day.part2(input)}"
 end
+
+task :day5 do
+  puts "DAY 5"
+  input = File.open("./txt/day05.txt").readlines
+  day = Day5.new
+
+  puts "Part 1: #{day.part1(input)}"
+  puts "Part 2: #{day.part2(input)}"
+end
